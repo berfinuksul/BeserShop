@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BeserShop.Models.VeganProduct>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<br />
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VeganProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VeganProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VeganProductStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VeganProductDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VeganProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VeganProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VeganProductStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VeganProductDescription)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BeserShop.Models.MeatProduct>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Meat</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MeatProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeatProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeatProductStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeatProductDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeatProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeatProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeatProductStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeatProductDescription)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MeatProductID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MeatProductID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MeatProductID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

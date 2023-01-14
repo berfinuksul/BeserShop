@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BeserShop.Models.VegetarianProduct>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Vegetarian</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VegetarianProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VegetarianProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VegetarianProductStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VegetarianProductDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VegetarianProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VegetarianProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VegetarianProductStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VegetarianProductDescription)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VegetarianProductID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VegetarianProductID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VegetarianProductID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

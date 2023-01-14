@@ -1,0 +1,46 @@
+﻿@model BeserShop.Models.VegetarianProduct
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>VegetarianProduct</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VegetarianProductName" class="control-label"></label>
+                <input asp-for="VegetarianProductName" class="form-control" />
+                <span asp-validation-for="VegetarianProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VegetarianProductPrice" class="control-label"></label>
+                <input asp-for="VegetarianProductPrice" class="form-control" />
+                <span asp-validation-for="VegetarianProductPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VegetarianProductStock" class="control-label"></label>
+                <input asp-for="VegetarianProductStock" class="form-control" />
+                <span asp-validation-for="VegetarianProductStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VegetarianProductDescription" class="control-label"></label>
+                <input asp-for="VegetarianProductDescription" class="form-control" />
+                <span asp-validation-for="VegetarianProductDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
